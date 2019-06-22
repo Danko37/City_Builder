@@ -32,7 +32,7 @@ public class Camera_Moving : MonoBehaviour
             Xmoving = 0;
             Zmoving = 0;
         }
-
+\\ограничение передвижения камеры над игровым полем
         if (gameObject.transform.position.x > 32f)
         {
             gameObject.transform.position = new Vector3(32f, gameObject.transform.position.y, gameObject.transform.position.z);
