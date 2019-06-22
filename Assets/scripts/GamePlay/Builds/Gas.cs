@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Gas : AbstractBuild
 {
-
-
     public Gas(int l = 1, int p = 125, int bT = 120, float per = 10) : base(l, p, bT, per)
     {       
     }
