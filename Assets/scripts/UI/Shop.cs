@@ -14,8 +14,8 @@ public class Shop : MonoBehaviour
 
     public Build_Panel build_Panel;//панелька в интерфейсе где отображается прогресс постройки
 
-    public Building buildingClass;//пока не нужен
-
+    public Building buildingClass;
+    
     public Resourses resourses;
     public ShopInfo ShopInfo;
 
