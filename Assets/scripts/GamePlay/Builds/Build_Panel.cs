@@ -74,7 +74,7 @@ public class Build_Panel : MonoBehaviour
         slider.fillAmount = 0f;
     }
    
-    public void SelfClick()//после завершения строительсятва щелкаем по иконке в правой панели и выбираем место
+    public void SelfClick()//после завершения строительсятва щелкаем по иконке на правой панели и выбираем место
     {
         if (isReady && !GameObject.Find("Ghost_build(Clone)"))
         {
