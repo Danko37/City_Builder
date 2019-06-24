@@ -27,10 +27,8 @@ public abstract class AbstractBuild : MonoBehaviour
     {
         StartCoroutine("ResourcesOperation");
     }
-    public virtual IEnumerator ResourcesOperation()//коротин добычи ресурсов
-   {
-    yield return null;
-   }
+    public abstract IEnumerator ResourcesOperation();//коротин добычи ресурсов
+  
     public virtual void OnMouseDown()
     {
         
