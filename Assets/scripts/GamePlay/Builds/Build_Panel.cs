@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 /// <summary>
-/// класс для отображения процесс постройки на экране
+/// класс для отображения процесса постройки на экране
 /// </summary>
 public class Build_Panel : MonoBehaviour
 {
@@ -74,7 +74,7 @@ public class Build_Panel : MonoBehaviour
         slider.fillAmount = 0f;
     }
    
-    public void SelfClick()//после завершения строительсятва щелкаем по иконке и выбираем место
+    public void SelfClick()//после завершения строительсятва щелкаем по иконке в правой панели и выбираем место
     {
         if (isReady && !GameObject.Find("Ghost_build(Clone)"))
         {
