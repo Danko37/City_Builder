@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Building : MonoBehaviour
 {
-    public Shop Shop;//указатель на магазин
+    public Shop Shop;
 
     public GameObject GhostObject;
     public GameObject[] BuildsForConstraction;

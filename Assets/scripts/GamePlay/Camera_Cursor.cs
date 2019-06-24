@@ -11,7 +11,7 @@ public class Camera_Cursor : MonoBehaviour
     public RaycastHit _hit;
     public Ray ray;
 
-    public Transform _transform { get; set; }//позиция ячейки для строительства
+    public Transform _transform { get; set; }
    
    
     void Update()
