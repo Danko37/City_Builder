@@ -126,7 +126,14 @@ public class Shop : MonoBehaviour
         }
     }
 
-   
+    void OnEnable()
+    {
+        if (Alert.activeSelf == true)
+        {
+            Alert.SetActive(false);
+        }
+
+    }
     void Start()
     {
         //назначаем обработчики события по нажатию ЛКМ по постройке в магазине
