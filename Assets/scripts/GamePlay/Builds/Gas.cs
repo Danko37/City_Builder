@@ -19,19 +19,6 @@ public class Gas : AbstractBuild
         }
     }
 
-    public override void OnMouseDown()//собираем ресурс
-    {
-        if (isReady && !(int.Parse(Resourses._gasValue.text) + accumulation > int.Parse(Resourses.gasLimit.text)))
-        {
-            Resourses.Set_Gas(accumulation);           
-            GetComponent<Renderer>().material.color = Color.white;
-            StartCoroutine("ResourcesOperation");
-        }
-        else
-        {         
-            Debug.Log("GasLimit");         
-        }      
-    }
 
     public override IEnumerator ResourcesOperation()//добыча ресурсов
     {
@@ -51,6 +38,19 @@ public class Gas : AbstractBuild
         }       
     }
 
+    public override void OnMouseDown()//собираем ресурс
+    {
+        if (isReady && !(int.Parse(Resourses._gasValue.text) + accumulation > int.Parse(Resourses.gasLimit.text)))
+        {
+            Resourses.Set_Gas(accumulation);           
+            GetComponent<Renderer>().material.color = Color.white;
+            StartCoroutine("ResourcesOperation");
+        }
+        else
+        {         
+            Debug.Log("GasLimit");         
+        }      
+    }
    
    
 }

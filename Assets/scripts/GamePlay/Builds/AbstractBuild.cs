@@ -8,7 +8,7 @@ public abstract class AbstractBuild : MonoBehaviour
     public int accumulationLimit;
     public int accumulation;
 
-    public Resourses Resourses;
+    public Resourses Resourses;//указатель на панель ресурсов
 
     public int Lvl { get; set; }
     public int Price { get; set; }
