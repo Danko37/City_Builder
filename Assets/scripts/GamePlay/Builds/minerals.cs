@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class minerals : AbstractBuild
-{
-    public minerals(int l = 1, int p = 100, int bT = 3 , float per = 20) 
+{   
+    void Start()
     {
-        Lvl = l;
-        Price = p;
-        Build_time = bT;
-        Performance = per;
+        Lvl = 1;
+        Price = 100;
+        Build_time = 3;
+        Performance = 20;
+        if (gameObject.GetComponent<MeshRenderer>())
+        {
+            Resourses = FindObjectOfType<Resourses>();
+            StartCoroutine("ResourcesOperation");
+        }
     }
     public override void OnMouseDown()
     {

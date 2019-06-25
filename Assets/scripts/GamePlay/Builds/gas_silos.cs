@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class gas_silos : AbstractBuild
 {
-    public gas_silos(int l = 1, int p = 150, int bT = 180, float per = 300)
+    void Start()
     {
-        Lvl = l;
-        Price = p;
-        Build_time = bT;
-        Performance = per;
+        Lvl = 1;
+        Price = 150;
+        Build_time = 3;
+        Performance = 300;
+
+        if (gameObject.GetComponent<MeshRenderer>())
+        {
+            Resourses = FindObjectOfType<Resourses>();
+            StartCoroutine("ResourcesOperation");
+        }
     }
     public override IEnumerator ResourcesOperation()
     {

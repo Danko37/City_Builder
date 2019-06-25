@@ -9,6 +9,6 @@ public class gasSilos_shop : AbstractShopBtn
 
     public override void SetBuild()
     {
-        build = new gas_silos();
+        build = new GameObject("gasSilosAbstract").AddComponent<gas_silos>() as gas_silos;
     }
 }

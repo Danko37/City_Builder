@@ -80,9 +80,12 @@ public class Build_Panel : MonoBehaviour
         {
             GameObject ghost = Instantiate(Ghost, new Vector3(0f, 0f, 0f), Quaternion.identity) as GameObject;
             ghost.GetComponent<Ghost>().typeOfBuildForConstraction = building_Under_Construction;
+
             shop.isActive = false;
             shop.gameObject.SetActive(shop.isActive);
+
             ghost.GetComponent<Ghost>()._DestroyGhost += GhostDestroy;
+
             isReady = false;
             IsBuilding = false;
         }

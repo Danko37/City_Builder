@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public abstract class AbstractBuild : MonoBehaviour
-{
+{    
     public bool isReady;//добыча завершена
 
     //лимит накопления здания
@@ -26,10 +26,6 @@ public abstract class AbstractBuild : MonoBehaviour
     {
         
     }
-    void Start()
-    {
-        Resourses = FindObjectOfType<Resourses>();   
-        StartCoroutine("ResourcesOperation");
-    }
 
+ 
 }

@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Gas : AbstractBuild
-{
-
-
-    public Gas(int l = 1, int p = 125, int bT = 3, float per = 10)
+{  
+    void Start()
     {
-        Lvl = l;
-        Price = p;
-        Build_time =bT;
-        Performance = per;
+        Lvl = 1;
+        Price = 125;
+        Build_time = 3;
+        Performance = 10;
+        if (gameObject.GetComponent<MeshRenderer>())
+        {
+            Resourses = FindObjectOfType<Resourses>();
+            StartCoroutine("ResourcesOperation");
+        }
     }
 
     public override void OnMouseDown()//собираем ресурс
@@ -31,6 +34,7 @@ public class Gas : AbstractBuild
 
     public override IEnumerator ResourcesOperation()//добыча ресурсов
     {
+        Debug.Log("startGas");
         accumulation = 0;
         accumulationLimit = 10;
         while (accumulation < accumulationLimit)

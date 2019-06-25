@@ -741,11 +741,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d2b34b682c73c489f22f23e73dcdb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourses: {fileID: 0}
+  isReady: 0
   accumulationLimit: 0
   accumulation: 0
-  slader: {fileID: 0}
-  Icon: {fileID: 0}
+  Resourses: {fileID: 0}
 --- !u!54 &8699488800180920199
 Rigidbody:
   m_ObjectHideFlags: 0
