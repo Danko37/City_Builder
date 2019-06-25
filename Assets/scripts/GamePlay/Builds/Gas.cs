@@ -10,10 +10,11 @@ public class Gas : AbstractBuild
     {
         Lvl = 1;
         Price = 125;
-        Build_time = 120;
+        Build_time = 3;
         Performance = 10;
         if (gameObject.GetComponent<MeshRenderer>())//если строится именно здание
-        {           
+        {
+            isReady = false;
             Resourses = FindObjectOfType<Resourses>();
             StartCoroutine("ResourcesOperation");
         }
@@ -44,9 +45,10 @@ public class Gas : AbstractBuild
         {
             Resourses.Set_Gas(accumulation);           
             GetComponent<Renderer>().material.color = Color.white;
+            isReady = false;
             StartCoroutine("ResourcesOperation");
         }
-        else
+        else 
         {         
             Debug.Log("GasLimit");         
         }      

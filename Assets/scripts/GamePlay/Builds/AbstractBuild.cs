@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class AbstractBuild : MonoBehaviour
 {    
-    public bool isReady;//добыча завершена
+    public bool isReady ;//добыча завершена
     //лимит накопления здания
     public int accumulationLimit;
     public int accumulation;
