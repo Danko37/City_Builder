@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class minerals : AbstractBuild
-{   
+{
+    
     void Start()
     {
         Lvl = 1;

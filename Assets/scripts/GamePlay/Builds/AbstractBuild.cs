@@ -4,7 +4,6 @@ using UnityEngine;
 public abstract class AbstractBuild : MonoBehaviour
 {    
     public bool isReady;//добыча завершена
-
     //лимит накопления здания
     public int accumulationLimit;
     public int accumulation;
@@ -21,7 +20,7 @@ public abstract class AbstractBuild : MonoBehaviour
         StartCoroutine("ResourcesOperation");
     }
     public abstract IEnumerator ResourcesOperation();//коротин добычи ресурсов
-  
+
     public virtual void OnMouseDown()
     {
         

@@ -742,6 +742,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isReady: 0
+  LimitAlert: {fileID: 5185558319415130395, guid: 98db44e33bc3d124d975356de2ef9bf9,
+    type: 3}
   accumulationLimit: 0
   accumulation: 0
   Resourses: {fileID: 0}

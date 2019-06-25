@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Gas : AbstractBuild
-{  
+{
+    
     void Start()
     {
         Lvl = 1;
         Price = 125;
         Build_time = 3;
         Performance = 10;
-        if (gameObject.GetComponent<MeshRenderer>())
-        {
+        if (gameObject.GetComponent<MeshRenderer>())//если строится именно здание
+        {           
+
             Resourses = FindObjectOfType<Resourses>();
             StartCoroutine("ResourcesOperation");
         }
@@ -27,8 +29,8 @@ public class Gas : AbstractBuild
             StartCoroutine("ResourcesOperation");
         }
         else
-        {
-            Debug.Log("GasLimit");
+        {         
+            Debug.Log("GasLimit");         
         }      
     }
 
