@@ -10,7 +10,7 @@ public class minerals : AbstractBuild
     {
         Lvl = 1;
         Price = 100;
-        Build_time = 3;
+        Build_time = 60;
         Performance = 20;
         if (gameObject.GetComponent<MeshRenderer>())
         {

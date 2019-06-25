@@ -10,7 +10,7 @@ public class minerals_silos : AbstractBuild
     {
         Lvl = 1;
         Price = 150;
-        Build_time = 3;
+        Build_time = 120;
         Performance = 200;
         if (gameObject.GetComponent<MeshRenderer>())
         {

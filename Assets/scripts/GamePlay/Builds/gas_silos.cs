@@ -8,7 +8,7 @@ public class gas_silos : AbstractBuild
     {
         Lvl = 1;
         Price = 150;
-        Build_time = 3;
+        Build_time = 180;
         Performance = 300;
 
         if (gameObject.GetComponent<MeshRenderer>())

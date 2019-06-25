@@ -10,11 +10,10 @@ public class Gas : AbstractBuild
     {
         Lvl = 1;
         Price = 125;
-        Build_time = 3;
+        Build_time = 120;
         Performance = 10;
         if (gameObject.GetComponent<MeshRenderer>())//если строится именно здание
         {           
-
             Resourses = FindObjectOfType<Resourses>();
             StartCoroutine("ResourcesOperation");
         }
