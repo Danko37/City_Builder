@@ -18,20 +18,6 @@ public class minerals : AbstractBuild
             StartCoroutine("ResourcesOperation");
         }
     }
-    public override void OnMouseDown()
-    {
-        if (isReady && !(int.Parse(Resourses._mineralsValue.text) + accumulation > int.Parse(Resourses.mineralsLimit.text)))
-        {
-            Resourses.Set_Minerals(accumulation);
-            GetComponent<Renderer>().material.color = Color.white;
-            StartCoroutine("ResourcesOperation");
-        }
-        else
-        {
-            Debug.Log("MineralsLimit");
-        }
-    }
-    
     public override IEnumerator ResourcesOperation()
     {
         accumulation = 0;
@@ -48,4 +34,19 @@ public class minerals : AbstractBuild
             GetComponent<Renderer>().material.color = Color.green;
         }
     }
+    public override void OnMouseDown()
+    {
+        if (isReady && !(int.Parse(Resourses._mineralsValue.text) + accumulation > int.Parse(Resourses.mineralsLimit.text)))
+        {
+            Resourses.Set_Minerals(accumulation);
+            GetComponent<Renderer>().material.color = Color.white;
+            isReady = false;
+            StartCoroutine("ResourcesOperation");
+        }
+        else
+        {
+            Debug.Log("MineralsLimit");
+        }
+    }
+    
 }
