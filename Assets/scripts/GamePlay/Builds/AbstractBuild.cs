@@ -15,14 +15,7 @@ public abstract class AbstractBuild : MonoBehaviour
     public int Price { get; set; }
     public int Build_time { get; set; }
     public float Performance { get; set; }
-    public AbstractBuild(int l, int p, int bT, float per)
-    {  
-        Lvl = l;
-        Price = p;
-        Build_time = bT;
-        Performance = per;
-    }
- 
+    
     public void ProductionStart()
     {
         StartCoroutine("ResourcesOperation");

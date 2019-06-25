@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class gas_silos : AbstractBuild
 {
-    public gas_silos(int l = 1, int p = 150, int bT = 180, float per = 300):base(l,p,bT,per)
+    public gas_silos(int l = 1, int p = 150, int bT = 180, float per = 300)
     {
-       
+        Lvl = l;
+        Price = p;
+        Build_time = bT;
+        Performance = per;
     }
     public override IEnumerator ResourcesOperation()
     {

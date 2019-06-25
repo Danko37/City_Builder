@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class minerals : AbstractBuild
 {
-    public minerals(int l = 1, int p = 100, int bT = 60, float per = 20) : base(l, p, bT, per)
+    public minerals(int l = 1, int p = 100, int bT = 3 , float per = 20) 
     {
-
+        Lvl = l;
+        Price = p;
+        Build_time = bT;
+        Performance = per;
     }
     public override void OnMouseDown()
     {
