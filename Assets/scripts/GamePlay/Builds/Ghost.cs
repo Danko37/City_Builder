@@ -15,6 +15,7 @@ public class Ghost : MonoBehaviour
     public Renderer GhostRenderer;
     private Camera_Cursor Cursor;
 
+    public Material[] GhostBoolMat;
    
     void Start()
     {       
@@ -28,7 +29,12 @@ public class Ghost : MonoBehaviour
 
         if (Cursor._hit.collider != null && Cursor._hit.collider.gameObject.layer != 8)
         {
-            GhostRenderer.enabled = true;          
+            GhostRenderer.enabled = true;
+            if (!Cursor._hit.collider.gameObject.GetComponent<NotForBuild>())
+            {
+                GhostRenderer.materials[0] = GhostBoolMat[0];
+            }
+            else { GhostRenderer.materials[0] = GhostBoolMat[1]; }
             if (Input.GetMouseButtonDown(0))
             {
                 

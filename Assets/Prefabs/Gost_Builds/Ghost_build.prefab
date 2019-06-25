@@ -329,6 +329,7 @@ MonoBehaviour:
   - {fileID: 1519505765274285018, guid: fc84fccd04d4d3846a5c796ff5632d44, type: 3}
   typeOfBuildForConstraction: {fileID: 0}
   GhostRenderer: {fileID: 0}
+  Cursor: {fileID: 0}
   GhostBoolMat:
   - {fileID: 2100000, guid: 94d3f462361558945b15f06a45d4e13e, type: 2}
   - {fileID: 2100000, guid: c6c256b04b219d54d9330339822e169b, type: 2}
