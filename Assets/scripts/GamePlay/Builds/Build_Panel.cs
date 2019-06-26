@@ -17,6 +17,7 @@ public class Build_Panel : MonoBehaviour
 
     public Image slider;
     public Sprite defaultSprite;
+
     [HideInInspector]
     public Sprite current_icon;
     public Shop shop;//указатель на магазин

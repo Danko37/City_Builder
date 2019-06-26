@@ -23,7 +23,6 @@ public class Gas : AbstractBuild
 
     public override IEnumerator ResourcesOperation()//добыча ресурсов
     {
-        Debug.Log("startGas");
         accumulation = 0;
         accumulationLimit = 10;
         while (accumulation < accumulationLimit)
