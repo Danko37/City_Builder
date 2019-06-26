@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Gas : AbstractBuild
 {
-    
     void Start()
     {
         Lvl = 1;
