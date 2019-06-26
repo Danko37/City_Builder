@@ -12,6 +12,7 @@ public class minerals_silos : AbstractBuild
         Price = 150;
         Build_time = 120;
         Performance = 200;
+
         if (gameObject.GetComponent<MeshRenderer>())
         {
             Resourses = FindObjectOfType<Resourses>();

@@ -11,6 +11,7 @@ public class Gas : AbstractBuild
         Price = 125;
         Build_time = 120;
         Performance = 10;
+
         if (gameObject.GetComponent<MeshRenderer>())//если строится именно здание
         {
             isReady = false;
@@ -24,12 +25,14 @@ public class Gas : AbstractBuild
     {
         accumulation = 0;
         accumulationLimit = 10;
+
         while (accumulation < accumulationLimit)
         {
             yield return new WaitForSeconds(1);
             accumulation++;
             Debug.Log("Gas "+accumulation);
         }
+
         if (accumulation >= accumulationLimit)
         {
             isReady = true;

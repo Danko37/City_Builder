@@ -12,6 +12,7 @@ public class minerals : AbstractBuild
         Price = 100;
         Build_time = 60;
         Performance = 20;
+
         if (gameObject.GetComponent<MeshRenderer>())
         {
             Resourses = FindObjectOfType<Resourses>();
@@ -22,6 +23,7 @@ public class minerals : AbstractBuild
     {
         accumulation = 0;
         accumulationLimit = 20;
+
         while (accumulation < accumulationLimit)
         {
             yield return new WaitForSeconds(1.5f);

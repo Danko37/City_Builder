@@ -22,9 +22,7 @@ public abstract class AbstractBuild : MonoBehaviour
     public abstract IEnumerator ResourcesOperation();//коротин добычи ресурсов
 
     public virtual void OnMouseDown()
-    {
-        
-    }
+    { }
 
  
 }
