@@ -14,7 +14,7 @@ public class Camera_Cursor : MonoBehaviour
     public Transform _transform { get; set; }
    
    
-    void Update()
+    void FixedUpdate()
     {
         ray = _Camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out _hit))
