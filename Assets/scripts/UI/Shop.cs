@@ -38,91 +38,100 @@ public class Shop : MonoBehaviour
 
     void Resource_request(AbstractBuild build)
     {
-        Type _buildType = build.GetType();
+        Gas gas = build as Gas;
+        minerals minerals = build as minerals;
+        gas_silos gas_Silos = build as gas_silos;
+        minerals_silos minerals_Silos = build as minerals_silos;
+
         //проверка ресурсов в зависимости от типа постройки
-        switch (_buildType.ToString())
-        {
-          case "Gas":
-                if (int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text) & !build_Panel.IsBuilding)//ресурсов достаточно
-                {
-                    resourses.Set_Minerals(-int.Parse(ShopInfo.price.text));
-                    startBuild(Gas_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
-                }
-                else if (!(int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text)))//если нет ресурсов
-                {
-                    AlertText.fontSize = 18;
-                    AlertText.text = "Not enough resources!!!";
-                    StartCoroutine("ShowAlert");
-                }
-                else if (build_Panel.IsBuilding)//если уже что то строится
-                {
-                    AlertText.fontSize = 20;
-                    AlertText.text = "Building Process...";
-                    StartCoroutine("ShowAlert");
-                }
-              break;
-
-          case "gas_silos":
-                if (int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text) & build_Panel.IsBuilding != true)
-                {
-                    resourses.Set_Minerals(-int.Parse(ShopInfo.price.text));
-                    startBuild(gasSilos_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
-                }
-                else if (!(int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text)))
-                {
-                    AlertText.fontSize = 18;
-                    AlertText.text = "Not enough resources!!!";
-                    StartCoroutine("ShowAlert");
-                }
-                else if (build_Panel.IsBuilding)
-                {
-                    AlertText.fontSize = 20;
-                    AlertText.text = "Building Process...";
-                    StartCoroutine("ShowAlert");
-                }
-                break;
-
-            case "minerals":
-                if (int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text) & build_Panel.IsBuilding != true)
-                {
-                    resourses.Set_Gas(-int.Parse(ShopInfo.price.text));
-                    startBuild(minShop.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
-                }
-                else if(!(int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text)))
-                {
-                    AlertText.fontSize = 18;
-                    AlertText.text = "Not enough resources!!!";
-                    StartCoroutine("ShowAlert");
-                }
-                else if (build_Panel.IsBuilding)
-                {
-                    AlertText.fontSize = 20;
-                    AlertText.text = "Building Process...";
-                    StartCoroutine("ShowAlert");
-                }
-                break;
-            case "minerals_silos":
-                if (int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text) & !build_Panel.IsBuilding)
-                {
-                    resourses.Set_Gas(-int.Parse(ShopInfo.price.text));
-                    startBuild(mineralsSilos_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
-                }
-                else if (!(int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text)))
-                {
-                    AlertText.fontSize = 18;
-                    AlertText.text = "Not enough resources!!!";
-                    StartCoroutine("ShowAlert");
-                }
-                else if (build_Panel.IsBuilding)
-                {
-                    AlertText.fontSize = 20;
-                    AlertText.text = "Building Process...";
-                    StartCoroutine("ShowAlert");
-                }
-                break;
-                
+        
           
+        if (gas)
+        {
+            if (int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text) & !build_Panel.IsBuilding)//ресурсов достаточно
+            {
+                resourses.Set_Minerals(-int.Parse(ShopInfo.price.text));
+                startBuild(Gas_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
+            }
+            else if (!(int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text)))//если нет ресурсов
+            {
+                AlertText.fontSize = 18;
+                AlertText.text = "Not enough resources!!!";
+                StartCoroutine("ShowAlert");
+            }
+            else if (build_Panel.IsBuilding)//если уже что то строится
+            {
+                AlertText.fontSize = 20;
+                AlertText.text = "Building Process...";
+                StartCoroutine("ShowAlert");
+            }
         }
+
+
+        if (gas_Silos)
+        {
+            if (int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text) & build_Panel.IsBuilding != true)
+            {
+                resourses.Set_Minerals(-int.Parse(ShopInfo.price.text));
+                startBuild(gasSilos_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
+            }
+            else if (!(int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text)))
+            {
+                AlertText.fontSize = 18;
+                AlertText.text = "Not enough resources!!!";
+                StartCoroutine("ShowAlert");
+            }
+            else if (build_Panel.IsBuilding)
+            {
+                AlertText.fontSize = 20;
+                AlertText.text = "Building Process...";
+                StartCoroutine("ShowAlert");
+            }
+        }
+
+
+        if (minerals)
+        {
+            if (int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text) & build_Panel.IsBuilding != true)
+            {
+                resourses.Set_Gas(-int.Parse(ShopInfo.price.text));
+                startBuild(minShop.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
+            }
+            else if (!(int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text)))
+            {
+                AlertText.fontSize = 18;
+                AlertText.text = "Not enough resources!!!";
+                StartCoroutine("ShowAlert");
+            }
+            else if (build_Panel.IsBuilding)
+            {
+                AlertText.fontSize = 20;
+                AlertText.text = "Building Process...";
+                StartCoroutine("ShowAlert");
+            }
+        }
+
+        if (minerals_Silos)
+        {
+            if (int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text) & !build_Panel.IsBuilding)
+            {
+                resourses.Set_Gas(-int.Parse(ShopInfo.price.text));
+                startBuild(mineralsSilos_.GetComponent<Image>(), ShopInfo.buildT, selectedBuild);
+            }
+            else if (!(int.Parse(resourses._gasValue.text) >= int.Parse(ShopInfo.price.text)))
+            {
+                AlertText.fontSize = 18;
+                AlertText.text = "Not enough resources!!!";
+                StartCoroutine("ShowAlert");
+            }
+            else if (build_Panel.IsBuilding)
+            {
+                AlertText.fontSize = 20;
+                AlertText.text = "Building Process...";
+                StartCoroutine("ShowAlert");
+            }
+        }
+                   
     }
 
     void OnEnable()

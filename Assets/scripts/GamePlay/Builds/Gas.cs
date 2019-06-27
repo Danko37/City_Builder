@@ -9,7 +9,7 @@ public class Gas : AbstractBuild
     {
         Lvl = 1;
         Price = 125;
-        Build_time = 120;
+        Build_time = 3;
         Performance = 10;
 
         if (gameObject.GetComponent<MeshRenderer>())//если строится именно здание
@@ -32,12 +32,8 @@ public class Gas : AbstractBuild
             accumulation++;
             Debug.Log("Gas "+accumulation);
         }
-
-        if (accumulation >= accumulationLimit)
-        {
             isReady = true;
-            GetComponent<Renderer>().material.color = Color.green;
-        }       
+            GetComponent<Renderer>().material.color = Color.green;             
     }
 
     public override void OnMouseDown()//собираем ресурс

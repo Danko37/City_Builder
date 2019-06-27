@@ -46,19 +46,15 @@ public class Build_Panel : MonoBehaviour
     IEnumerator BuildCoroutine()
     {
         IsBuilding = true;        
-        int currentTime = 0;
+        float currentTime = 0f;
         slider.fillAmount = 0f;
         while (currentTime < BuildingTime)
-        {
-            yield return new WaitForSeconds(1);
-            currentTime++;
-            slider.fillAmount = (float)currentTime / (float)BuildingTime;           
-        }
-        if (currentTime >= BuildingTime)
-        {
-            StopCoroutine("BuildCoroutine");
-            _constractionCompeted(building_Under_Construction);
-        }
+        {          
+            currentTime += Time.deltaTime;
+            slider.fillAmount = currentTime / (float)BuildingTime;
+            yield return null;
+        }                  
+            _constractionCompeted(building_Under_Construction);        
     }
 
     void PawnGhost(AbstractBuild build)//павн указки
