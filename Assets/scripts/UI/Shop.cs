@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
 
     private AbstractBuild selectedBuild;
 
-    #region указатели кнопки из магазина
+    #region указатели на кнопки из магазина
     public gas_shop Gas_;
     public minerals_shop minShop;
     public gasSilos_shop gasSilos_;
@@ -44,8 +44,7 @@ public class Shop : MonoBehaviour
         minerals_silos minerals_Silos = build as minerals_silos;
 
         //проверка ресурсов в зависимости от типа постройки
-        
-          
+   
         if (gas)
         {
             if (int.Parse(resourses._mineralsValue.text) >= int.Parse(ShopInfo.price.text) & !build_Panel.IsBuilding)//ресурсов достаточно
