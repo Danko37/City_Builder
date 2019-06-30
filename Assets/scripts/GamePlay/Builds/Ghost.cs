@@ -31,35 +31,39 @@ public class Ghost : MonoBehaviour
             GhostRenderer.enabled = true;          
             if (Input.GetMouseButtonDown(0))
             {
-                
-                Type buildType = typeOfBuildForConstraction.GetType();
-                switch (buildType.ToString())
+                Gas gas = typeOfBuildForConstraction as Gas;
+                minerals minerals = typeOfBuildForConstraction as minerals;
+                gas_silos gas_Silos = typeOfBuildForConstraction as gas_silos;
+                minerals_silos minerals_Silos = typeOfBuildForConstraction as minerals_silos;
+
+                if (gas)
                 {
-                    case "Gas":
-                        Instantiate(buildings[0], gameObject.transform.position,Quaternion.identity);
-                        _DestroyGhost();
-                        Destroy(gameObject);
-                    break;
-
-                    case "minerals":
-                        Instantiate(buildings[1], gameObject.transform.position, Quaternion.identity);
-                        _DestroyGhost();
-                        Destroy(gameObject);
-                        break;
-
-                    case "gas_silos":
-                        Instantiate(buildings[2], gameObject.transform.position, Quaternion.identity);
-                        _DestroyGhost();
-                        Destroy(gameObject);
-                        break;
-
-                    case "minerals_silos":
-                        Instantiate(buildings[3], gameObject.transform.position, Quaternion.identity);
-                        _DestroyGhost();
-                        Destroy(gameObject);
-                        break;
-
+                    Instantiate(buildings[0], gameObject.transform.position, Quaternion.identity);
+                    _DestroyGhost();
+                    Destroy(gameObject);
                 }
+                if (minerals)
+                {
+                    Instantiate(buildings[1], gameObject.transform.position, Quaternion.identity);
+                    _DestroyGhost();
+                    Destroy(gameObject);
+                }
+
+                if (gas_Silos)
+                {
+                    Instantiate(buildings[2], gameObject.transform.position, Quaternion.identity);
+                    _DestroyGhost();
+                    Destroy(gameObject);
+                }
+
+                if (minerals_Silos)
+                {
+                    Instantiate(buildings[3], gameObject.transform.position, Quaternion.identity);
+                    _DestroyGhost();
+                    Destroy(gameObject);
+                }
+
+                
             }
         }
         else
