@@ -10,7 +10,7 @@ public class Shop : MonoBehaviour
     public Text AlertText;
 
     public event Action<AbstractBuild> pressBuild;
-    public event Action<Image,Text,AbstractBuild> startBuild;//событие начала строительства<иконка,время строительства>
+    public event Action<Image,Text,AbstractBuild> startBuild;//событие начала строительства<иконка,время строительства,здание>
 
     public Build_Panel build_Panel;//панелька в интерфейсе где отображается прогресс постройки
 
