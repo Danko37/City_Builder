@@ -8,6 +8,6 @@ public class gas_shop : AbstractShopBtn
 {
     public override void SetBuild()
     {
-        build = new GameObject("GasAbstract").AddComponent<Gas>() as Gas;
+        build = new GameObject("GasAbstract").AddComponent<Gas>();
     }
 }

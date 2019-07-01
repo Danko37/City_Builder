@@ -8,6 +8,6 @@ public class minerals_shop : AbstractShopBtn
 { 
     public override void SetBuild()
     {
-        build = new GameObject("MineralsAbstract").AddComponent<minerals>() as minerals;
+        build = new GameObject("MineralsAbstract").AddComponent<minerals>();
     }
 }
