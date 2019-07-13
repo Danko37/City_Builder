@@ -22,7 +22,7 @@ public class minerals : AbstractBuild
     public override IEnumerator ResourcesOperation()
     {
         accumulation = 0;
-        accumulationLimit = 20;
+        accumulationLimit = (int)Performance;
 
         while (accumulation < accumulationLimit)
         {

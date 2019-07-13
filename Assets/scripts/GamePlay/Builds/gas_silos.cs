@@ -19,7 +19,7 @@ public class gas_silos : AbstractBuild
     }
     public override IEnumerator ResourcesOperation()
     {
-        accumulation = 300;
+        accumulation = (int)Performance;
         Resourses.Set_GasLimit(accumulation);
         yield return null;
     }

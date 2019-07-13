@@ -21,7 +21,7 @@ public class minerals_silos : AbstractBuild
     }
     public override IEnumerator ResourcesOperation()
     {
-        accumulation = 200;
+        accumulation = (int)Performance;
         Resourses.Set_MineralsLimit(accumulation);
         yield return null;
     }

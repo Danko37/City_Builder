@@ -24,7 +24,7 @@ public class Gas : AbstractBuild
     public override IEnumerator ResourcesOperation()//добыча ресурсов
     {
         accumulation = 0;
-        accumulationLimit = 10;
+        accumulationLimit = (int)Performance;
 
         while (accumulation < accumulationLimit)
         {
