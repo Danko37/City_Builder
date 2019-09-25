@@ -16,7 +16,7 @@ public class minerals_silos : AbstractBuild
         if (gameObject.GetComponent<MeshRenderer>())
         {
             Resourses = FindObjectOfType<Resourses>();
-            StartCoroutine("ResourcesOperation");
+            StartCoroutine(ResourcesOperation());
         }
     }
     public override IEnumerator ResourcesOperation()

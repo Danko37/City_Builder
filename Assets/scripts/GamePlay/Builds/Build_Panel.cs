@@ -40,7 +40,7 @@ public class Build_Panel : MonoBehaviour
         current_icon = image.sprite;
         GetComponent<Image>().sprite = current_icon;
         BuildingTime = int.Parse(buildTime.text);
-        StartCoroutine("BuildCoroutine");//постройка
+        StartCoroutine(BuildCoroutine());//постройка
         
     }
     IEnumerator BuildCoroutine()

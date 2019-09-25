@@ -17,7 +17,7 @@ public abstract class AbstractBuild : MonoBehaviour
     
     public void ProductionStart()
     {
-        StartCoroutine("ResourcesOperation");
+        StartCoroutine(ResourcesOperation());
     }
     public abstract IEnumerator ResourcesOperation();//коротин добычи ресурсов
 

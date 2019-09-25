@@ -167,7 +167,6 @@ public class Shop : MonoBehaviour
         Alert.SetActive(true);
         yield return new WaitForSeconds(3);
         Alert.SetActive(false);
-        StopCoroutine("ShowAlert");
     }
     public void OnClick()//нажатие купить
     {
@@ -179,7 +178,7 @@ public class Shop : MonoBehaviour
         catch (NullReferenceException)
         {
            AlertText.text = "Choose a building!!!";
-            StartCoroutine("ShowAlert"); 
+            StartCoroutine(ShowAlert()); 
         }
  
     }
